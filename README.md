@@ -12,7 +12,7 @@ To address this challenge, we propose **C2I-DINO**, a category-to-instance frame
 
 Extensive experiments on RSVG, OPT-RSVG, and DIOR-RSVG demonstrate that C2I-DINO achieves state-of-the-art performance on most reported metrics.
 
-![Method overview](assets/method-overview.png)
+![Method overview](assets/framework.png)
 
 ## Key Features
 
