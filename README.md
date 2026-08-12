@@ -29,7 +29,7 @@ The framework is shown below.
 │   ├── dior_rsvg/
 │   └── opt_rsvg/
 ├── mmdet/                           # MMDetection framework and customized modules
-├── tools/                           # Training, evaluation, conversion, and visualization tools
+├── tools/                           # Training, testing, and dataset conversion tools
 ├── scripts/                         # Final training and testing scripts for all three datasets
 ├── pretrained/                      # Place downloaded pretrained models here
 └── assets/                          # Method overview and result figures
