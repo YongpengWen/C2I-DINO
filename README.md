@@ -6,13 +6,9 @@
 
 ## Overview
 
-Remote sensing visual grounding (RSVG) aims to localize objects described by natural-language expressions in large-scale aerial images. Compared with conventional visual grounding, RSVG contains many repeated objects and long-range spatial relations, requiring a model to preserve the requested category cue while distinguishing the referred instance from similar objects.
+**C2I-DINO** is a Grounding DINO-based method for remote sensing visual grounding. It combines Category-Focused Prompting (CFP) with Spatial Instance Learning (SIL) to strengthen category cues and distinguish the referred object from similar instances. Experiments cover RSVG, DIOR-RSVG, and OPT-RSVG.
 
-To address this challenge, we propose **C2I-DINO**, a category-to-instance framework built on Grounding DINO. It introduces **Category-Focused Prompting (CFP)**, which retrieves learnable category-specific prompts and appends them to the projected text memory before cross-modal fusion, and **Spatial Instance Learning (SIL)**, which uses ranking and suppression losses to separate the matched query from high-response queries at incorrect locations during training. Both modules retain the original image-expression input and inference interface. SIL is confined to training and leaves inference unchanged.
-
-Extensive experiments on RSVG, OPT-RSVG, and DIOR-RSVG demonstrate that C2I-DINO achieves state-of-the-art performance on most reported metrics.
-
-The figure below summarizes C2I-DINO. Category-Focused Prompting (CFP) strengthens category cues with class-specific learnable suffixes, while Spatial Instance Learning (SIL) suppresses confusing responses from incorrect instances during training.
+The framework is shown below.
 
 ![C2I-DINO framework](assets/framework.png)
 
