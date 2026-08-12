@@ -12,8 +12,6 @@ To address this challenge, we propose **C2I-DINO**, a category-to-instance frame
 
 Extensive experiments on RSVG, OPT-RSVG, and DIOR-RSVG demonstrate that C2I-DINO achieves state-of-the-art performance on most reported metrics.
 
-## Method Overview
-
 The figure below summarizes C2I-DINO. Category-Focused Prompting (CFP) strengthens category cues with class-specific learnable suffixes, while Spatial Instance Learning (SIL) suppresses confusing responses from incorrect instances during training.
 
 ![C2I-DINO framework](assets/framework.png)
