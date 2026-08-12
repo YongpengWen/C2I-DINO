@@ -138,17 +138,17 @@ export PYTHONPATH="$PWD:$PYTHONPATH"
 export OMP_NUM_THREADS=1
 export MKL_NUM_THREADS=1
 
-# RSVG: C2I-DINO (CFP + SIL)
+# RSVG
 python tools/train.py \
   configs/rsvg/c2i_dino_rsvg.py \
   --work-dir work_dirs/rsvg
 
-# DIOR-RSVG: C2I-DINO (CFP + SIL)
+# DIOR-RSVG
 python tools/train.py \
   configs/dior_rsvg/c2i_dino_dior_rsvg.py \
   --work-dir work_dirs/dior_rsvg
 
-# OPT-RSVG: C2I-DINO (CFP + SIL)
+# OPT-RSVG
 python tools/train.py \
   configs/opt_rsvg/c2i_dino_opt_rsvg.py \
   --work-dir work_dirs/opt_rsvg
