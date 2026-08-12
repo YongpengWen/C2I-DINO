@@ -6,16 +6,20 @@
 
 ## Overview
 
-This repository provides an implementation of remote sensing visual grounding based on Grounding DINO and MMDetection. Given a natural-language referring expression, the model localizes the corresponding target in a remote sensing image.
+Remote sensing visual grounding (RSVG) aims to localize objects described by natural-language expressions in large-scale aerial images. Compared with conventional visual grounding, RSVG contains many repeated objects and long-range spatial relations, requiring a model to preserve the requested category cue while distinguishing the referred instance from similar objects.
 
-The code supports experiments on RSVG, DIOR-RSVG, OPT-RSVG, and FLIR. The main implementation includes class-specific text suffixes and spatial contrast learning for improving language-vision alignment in complex remote sensing scenes.
+To address this challenge, we propose **C2I-DINO**, a category-to-instance framework built on Grounding DINO. It introduces **Category-Focused Prompting (CFP)**, which retrieves learnable category-specific prompts and appends them to the projected text memory before cross-modal fusion, and **Spatial Instance Learning (SIL)**, which uses ranking and suppression losses to separate the matched query from high-response queries at incorrect locations during training. Both modules retain the original image-expression input and inference interface. SIL is confined to training and leaves inference unchanged.
+
+Extensive experiments on RSVG, OPT-RSVG, and DIOR-RSVG demonstrate that C2I-DINO achieves state-of-the-art performance on most reported metrics.
+
+![Method overview](assets/method-overview.png)
 
 ## Key Features
 
 - Grounding DINO with a Swin-T visual backbone.
 - Class-specific learnable text suffixes for stronger category representations.
 - Spatial contrast learning for suppressing confusing nearby proposals.
-- Training and evaluation configurations for RSVG, DIOR-RSVG, OPT-RSVG, and FLIR.
+- Training and evaluation configurations for RSVG, DIOR-RSVG, and OPT-RSVG.
 - Data conversion, evaluation, visualization, and experiment scripts.
 - An experimental IR-visible dual-branch rotated Grounding DINO prototype in `dual_grounding_dino_enhance_share_w.py`.
 
@@ -26,8 +30,7 @@ The code supports experiments on RSVG, DIOR-RSVG, OPT-RSVG, and FLIR. The main i
 ├── configs/                         # Dataset and experiment configurations
 │   ├── rsvg/
 │   ├── dior_rsvg/
-│   ├── opt_vg/
-│   └── flir/
+│   └── opt_vg/
 ├── mmdet/                           # MMDetection framework and customized modules
 ├── tools/                           # Training, evaluation, conversion, and visualization tools
 ├── scripts/                         # Common experiment scripts
@@ -38,7 +41,7 @@ The code supports experiments on RSVG, DIOR-RSVG, OPT-RSVG, and FLIR. The main i
 
 ## Datasets
 
-The experiments use RSVG, DIOR-RSVG, OPT-RSVG, and FLIR. Please download each dataset from its official source and comply with its license. Datasets and experimental outputs are not included in this repository.
+The experiments use RSVG, DIOR-RSVG, and OPT-RSVG. Please download each dataset from its official source and comply with its license. Datasets and experimental outputs are not included in this repository.
 
 The expected layout is:
 
@@ -46,11 +49,22 @@ The expected layout is:
 datasets/
 ├── RSVG/rsvg/
 ├── DIOR-RSVG/
-├── opt-rsvg/
-└── flir/
+└── opt-rsvg/
 ```
 
 Before running an experiment, update the dataset paths in the selected configuration file. See [docs/PORTING.md](docs/PORTING.md) for migration notes.
+
+## Results
+
+The following quantitative comparison reports performance on the OPT-RSVG and DIOR-RSVG test splits. C2I-DINO uses a Swin-T visual encoder and BERT language encoder.
+
+![C2I-DINO result summary](assets/readme-preview.png)
+
+![Quantitative results](assets/quantitative-results.png)
+
+Qualitative comparisons on representative RSVG scenes are shown below. Green boxes denote ground truth, yellow boxes denote the baseline predictions, and red boxes denote the predictions of C2I-DINO.
+
+![Qualitative results](assets/qualitative-results.png)
 
 ## Installation
 
@@ -140,4 +154,3 @@ This project is built on [MMDetection](https://github.com/open-mmlab/mmdetection
 ## Citation
 
 If you find this repository useful, please cite Grounding DINO, MMDetection, and the datasets used in your experiments. Project-specific citation information will be added after publication.
-
