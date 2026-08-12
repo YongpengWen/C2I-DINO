@@ -69,17 +69,17 @@ test_pipeline = [
 
 train_dataloader = dict(
     dataset=dict(
-        ann_file='odvg_ann_target_np/train_vg.jsonl',
+        ann_file='odvg_ann/train_vg.jsonl',
         pipeline=train_pipeline))
 
 val_dataloader = dict(
     dataset=dict(
-        ann_file='mdetr_annotations_target_np/finetune_rsvg_val.json',
+        ann_file='mdetr_annotations/finetune_rsvg_val.json',
         pipeline=test_pipeline))
 
 test_dataloader = dict(
     dataset=dict(
-        ann_file='mdetr_annotations_target_np/finetune_rsvg_test.json',
+        ann_file='mdetr_annotations/finetune_rsvg_test.json',
         pipeline=test_pipeline))
 
 val_evaluator = dict(

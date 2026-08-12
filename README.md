@@ -45,16 +45,16 @@ The expected layout is:
 datasets/
 ├── RSVG/rsvg/
 │   ├── images/
-│   ├── mdetr_annotations_target_np/
-│   └── odvg_ann_target_np/
+│   ├── mdetr_annotations/
+│   └── odvg_ann/
 ├── DIOR-RSVG/
 │   ├── JPEGImages/
-│   ├── mdetr_annotations_official_split_target_np/
-│   └── odvg_ann_official_split_target_np/
+│   ├── mdetr_annotations_official_split/
+│   └── odvg_ann_official_split/
 └── opt-rsvg/
     ├── Image/
-    ├── mdetr_annotations_official_split_target_np/
-    └── odvg_ann_official_split_target_np/
+    ├── mdetr_annotations_official_split/
+    └── odvg_ann_official_split/
 ```
 
 These are the directories required by the final training and evaluation configurations. The original `Annotations/` XML files and `split/` files are optional and are only needed when regenerating converted annotations. If you start from the original XML annotations and split files, run:

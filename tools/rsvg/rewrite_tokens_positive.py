@@ -39,7 +39,7 @@ def parse_args():
         help='RSVG root that contains odvg_ann and mdetr_annotations.')
     parser.add_argument(
         '--out-suffix',
-        default='_target_np',
+        default='_processed',
         help='Suffix for generated annotation directories.')
     return parser.parse_args()
 
