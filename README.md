@@ -75,10 +75,6 @@ The conversion commands require the original XML annotations and split files and
 
 Set `RSVG_DATA_ROOT`, `DIOR_DATA_ROOT`, or `OPT_DATA_ROOT` to override the repository-relative defaults.
 
-## Results
-
-![Results](assets/results.png)
-
 ## Installation
 
 1. Clone the repository.
