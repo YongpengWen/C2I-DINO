@@ -59,8 +59,6 @@ python tools/opt_rsvg/convert_opt_rsvg.py \
   --data-root datasets/opt-rsvg
 ```
 
-Set `RSVG_DATA_ROOT`, `DIOR_DATA_ROOT`, or `OPT_DATA_ROOT` to override the repository-relative defaults.
-
 ## Installation
 
 1. Clone the repository.
