@@ -20,21 +20,6 @@ The framework is shown below.
 - Training and evaluation configurations for RSVG, DIOR-RSVG, and OPT-RSVG.
 - Data conversion, evaluation, visualization, and experiment scripts.
 
-## Repository Structure
-
-```text
-.
-├── configs/                         # Dataset and experiment configurations
-│   ├── rsvg/
-│   ├── dior_rsvg/
-│   └── opt_rsvg/
-├── mmdet/                           # MMDetection framework and customized modules
-├── tools/                           # Training, testing, and dataset conversion tools
-├── scripts/                         # Final training and testing scripts for all three datasets
-├── pretrained/                      # Place downloaded pretrained models here
-└── assets/                          # Method overview and result figures
-```
-
 ## Datasets
 
 The experiments use RSVG, DIOR-RSVG, and OPT-RSVG. Please download each dataset from its official source and comply with its license. Datasets and generated annotations are not included in this repository.
