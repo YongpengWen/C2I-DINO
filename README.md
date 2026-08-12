@@ -22,9 +22,7 @@ The framework is shown below.
 
 ## Datasets
 
-The experiments use RSVG, DIOR-RSVG, and OPT-RSVG. Please download each dataset from its official source and comply with its license. Datasets and generated annotations are not included in this repository.
-
-The expected layout is:
+Use the three paper datasets: RSVG, DIOR-RSVG, and OPT-RSVG. Download them from their official sources and place the required files under:
 
 ```text
 datasets/
@@ -42,7 +40,7 @@ datasets/
     └── odvg_ann_official_split/
 ```
 
-These are the directories required by the final training and evaluation configurations. The original `Annotations/` XML files and `split/` files are optional and are only needed when regenerating converted annotations. If you start from the original XML annotations and split files, run:
+For DIOR-RSVG and OPT-RSVG, regenerate converted annotations from the original XML and split files with:
 
 ```bash
 # Run from the repository root.
@@ -55,8 +53,6 @@ python tools/opt_rsvg/opt_rsvg_xml_to_mdetr.py \
 python tools/opt_rsvg/opt_rsvg_xml_to_odvg.py \
   --data-root datasets/opt-rsvg
 ```
-
-The conversion commands require the original XML annotations and split files and write the converted files into the dataset directories.
 
 Set `RSVG_DATA_ROOT`, `DIOR_DATA_ROOT`, or `OPT_DATA_ROOT` to override the repository-relative defaults.
 
