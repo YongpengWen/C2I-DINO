@@ -156,3 +156,4 @@ Replace the placeholders with the relevant configuration, trained checkpoint, an
 ## Acknowledgments
 
 This project is built on [MMDetection](https://github.com/open-mmlab/mmdetection) and Grounding DINO. We thank the original authors and the dataset providers for their open-source contributions.
+# C2I-DINO
