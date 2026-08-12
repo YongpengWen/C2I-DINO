@@ -22,7 +22,7 @@ The figure below summarizes C2I-DINO. Category-Focused Prompting (CFP) strengthe
 
 - Grounding DINO with a Swin-T visual backbone.
 - Class-specific learnable text suffixes for stronger category representations.
-- Spatial contrast learning for suppressing confusing nearby proposals.
+- Spatial Instance Learning (SIL) for suppressing confusing nearby proposals.
 - Training and evaluation configurations for RSVG, DIOR-RSVG, and OPT-RSVG.
 - Data conversion, evaluation, visualization, and experiment scripts.
 
@@ -36,9 +36,9 @@ The figure below summarizes C2I-DINO. Category-Focused Prompting (CFP) strengthe
 │   └── opt_rsvg/
 ├── mmdet/                           # MMDetection framework and customized modules
 ├── tools/                           # Training, evaluation, conversion, and visualization tools
-├── scripts/                         # Final training and testing script for all three datasets
+├── scripts/                         # Final training and testing scripts for all three datasets
 ├── pretrained/                      # Place downloaded pretrained models here
-└── pretrained/                      # Local pretrained models
+└── assets/                          # Method overview and result figures
 ```
 
 ## Datasets
@@ -50,8 +50,20 @@ The expected layout is:
 ```text
 datasets/
 ├── RSVG/rsvg/
+│   ├── images/
+│   ├── mdetr_annotations/
+│   └── odvg_ann/
 ├── DIOR-RSVG/
+│   ├── JPEGImages/
+│   ├── Annotations/
+│   ├── mdetr_annotations_official_split/
+│   └── odvg_ann_official_split/
 └── opt-rsvg/
+    ├── Image/
+    ├── Annotations/
+    ├── split/
+    ├── mdetr_annotations_official_split/
+    └── odvg_ann_official_split/
 ```
 
 The repository expects the converted MDETR/RefCOCO-style annotations and ODVG JSONL files under each dataset directory. If you start from the original XML annotations and split files, run:
@@ -79,8 +91,8 @@ RSVG uses the provided `datasets/RSVG/rsvg/mdetr_annotations/` and `odvg_ann/` f
 1. Clone the repository.
 
    ```bash
-   git clone <YOUR_REPOSITORY_URL
-   cd <YOUR_REPOSITORY_NAME>
+   git clone https://github.com/YongpengWen/C2I-DINO.git
+   cd C2I-DINO
    ```
 
 2. Create the environment. The experiments were run with Python 3.8, PyTorch 2.0.1, CUDA 11.7, MMCV 2.0.0, MMEngine 0.10.4, MMDetection 3.3.0, and Transformers 4.46.3.
@@ -96,12 +108,13 @@ RSVG uses the provided `datasets/RSVG/rsvg/mdetr_annotations/` and `odvg_ann/` f
 
 ## Download Pretrained Models
 
-Download the `pretrained` folder from Baidu Netdisk and extract it into the repository root:
+The experiments use a Grounding DINO Swin-T checkpoint and the `bert-base-uncased` tokenizer/model. Download the bundled files from Baidu Netdisk:
 
-- Link: https://pan.baidu.com/s/1oEEg-FusTiF92BDbxJEWVA?pwd=1124
-- Extraction code: `1124`
+| Resource | Download | Destination |
+| --- | --- | --- |
+| Grounding DINO Swin-T checkpoint and BERT files | [Baidu Netdisk](https://pan.baidu.com/s/1oEEg-FusTiF92BDbxJEWVA?pwd=1124) (extraction code: `1124`) | `pretrained/` |
 
-After extraction, the directory should contain:
+After downloading and extracting, the repository should contain:
 
 ```text
 pretrained/
@@ -114,7 +127,7 @@ pretrained/
     └── vocab.txt
 ```
 
-Set `load_from` and `lang_model_name` in each configuration to the local paths of these files when necessary.
+The configurations refer to these repository-relative paths by default. If you store the files elsewhere, update `load_from` and `lang_model_name` or provide an equivalent local path.
 
 ## Training
 
@@ -125,17 +138,17 @@ export PYTHONPATH="$PWD:$PYTHONPATH"
 export OMP_NUM_THREADS=1
 export MKL_NUM_THREADS=1
 
-# RSVG: class suffix + spatial contrast
+# RSVG: C2I-DINO (CFP + SIL)
 python tools/train.py \
   configs/rsvg/c2i_dino_rsvg.py \
   --work-dir work_dirs/rsvg
 
-# DIOR-RSVG
+# DIOR-RSVG: C2I-DINO (CFP + SIL)
 python tools/train.py \
   configs/dior_rsvg/c2i_dino_dior_rsvg.py \
   --work-dir work_dirs/dior_rsvg
 
-# OPT-RSVG
+# OPT-RSVG: C2I-DINO (CFP + SIL)
 python tools/train.py \
   configs/opt_rsvg/c2i_dino_opt_rsvg.py \
   --work-dir work_dirs/opt_rsvg
@@ -152,4 +165,3 @@ Replace the placeholders with the relevant configuration, trained checkpoint, an
 ## Acknowledgments
 
 This project is built on [MMDetection](https://github.com/open-mmlab/mmdetection) and Grounding DINO. We thank the original authors and the dataset providers for their open-source contributions.
-# C2I-DINO
