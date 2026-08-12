@@ -45,22 +45,19 @@ The expected layout is:
 datasets/
 ├── RSVG/rsvg/
 │   ├── images/
-│   ├── mdetr_annotations/
-│   └── odvg_ann/
+│   ├── mdetr_annotations_target_np/
+│   └── odvg_ann_target_np/
 ├── DIOR-RSVG/
 │   ├── JPEGImages/
-│   ├── Annotations/
-│   ├── mdetr_annotations_official_split/
-│   └── odvg_ann_official_split/
+│   ├── mdetr_annotations_official_split_target_np/
+│   └── odvg_ann_official_split_target_np/
 └── opt-rsvg/
     ├── Image/
-    ├── Annotations/
-    ├── split/
-    ├── mdetr_annotations_official_split/
-    └── odvg_ann_official_split/
+    ├── mdetr_annotations_official_split_target_np/
+    └── odvg_ann_official_split_target_np/
 ```
 
-The repository expects the converted MDETR/RefCOCO-style annotations and ODVG JSONL files under each dataset directory. If you start from the original XML annotations and split files, run:
+These are the directories required by the final training and evaluation configurations. The original `Annotations/` XML files and `split/` files are optional and are only needed when regenerating converted annotations. If you start from the original XML annotations and split files, run:
 
 ```bash
 # Run from the repository root.
@@ -74,7 +71,9 @@ python tools/opt_rsvg/opt_rsvg_xml_to_odvg.py \
   --data-root datasets/opt-rsvg
 ```
 
-RSVG uses the provided `datasets/RSVG/rsvg/mdetr_annotations/` and `odvg_ann/` files. Set `RSVG_DATA_ROOT`, `DIOR_DATA_ROOT`, or `OPT_DATA_ROOT` to override the repository-relative defaults.
+The conversion commands require the original XML annotations and split files and write the converted files into the dataset directories.
+
+Set `RSVG_DATA_ROOT`, `DIOR_DATA_ROOT`, or `OPT_DATA_ROOT` to override the repository-relative defaults.
 
 ## Results
 
