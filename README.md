@@ -27,6 +27,7 @@ The code supports experiments on RSVG, DIOR-RSVG, OPT-RSVG, and FLIR. The main i
 │   ├── rsvg/
 │   ├── dior_rsvg/
 │   ├── opt_vg/
+│   └── flir/
 ├── mmdet/                           # MMDetection framework and customized modules
 ├── tools/                           # Training, evaluation, conversion, and visualization tools
 ├── scripts/                         # Common experiment scripts
@@ -37,7 +38,7 @@ The code supports experiments on RSVG, DIOR-RSVG, OPT-RSVG, and FLIR. The main i
 
 ## Datasets
 
-The experiments use RSVG, DIOR-RSVG and OPT-RSVG. Please download each dataset from its official source and comply with its license. Datasets and experimental outputs are not included in this repository.
+The experiments use RSVG, DIOR-RSVG, OPT-RSVG, and FLIR. Please download each dataset from its official source and comply with its license. Datasets and experimental outputs are not included in this repository.
 
 The expected layout is:
 
@@ -46,6 +47,7 @@ datasets/
 ├── RSVG/rsvg/
 ├── DIOR-RSVG/
 ├── opt-rsvg/
+└── flir/
 ```
 
 Before running an experiment, update the dataset paths in the selected configuration file. See [docs/PORTING.md](docs/PORTING.md) for migration notes.
