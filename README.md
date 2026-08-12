@@ -17,7 +17,7 @@ Extensive experiments on RSVG, OPT-RSVG, and DIOR-RSVG demonstrate that C2I-DINO
 ## Key Features
 
 - Grounding DINO with a Swin-T visual backbone.
-- Class-specific learnable text suffixes for stronger category representations.
+- Class-specific le  arnable text suffixes for stronger category representations.
 - Spatial contrast learning for suppressing confusing nearby proposals.
 - Training and evaluation configurations for RSVG, DIOR-RSVG, and OPT-RSVG.
 - Data conversion, evaluation, visualization, and experiment scripts.
@@ -56,22 +56,14 @@ Before running an experiment, update the dataset paths in the selected configura
 
 ## Results
 
-The following quantitative comparison reports performance on the OPT-RSVG and DIOR-RSVG test splits. C2I-DINO uses a Swin-T visual encoder and BERT language encoder.
-
-![C2I-DINO result summary](assets/readme-preview.png)
-
-![Quantitative results](assets/quantitative-results.png)
-
-Qualitative comparisons on representative RSVG scenes are shown below. Green boxes denote ground truth, yellow boxes denote the baseline predictions, and red boxes denote the predictions of C2I-DINO.
-
-![Qualitative results](assets/qualitative-results.png)
+![Results](assets/results.png)
 
 ## Installation
 
 1. Clone the repository.
 
    ```bash
-   git clone <YOUR_REPOSITORY_URL>
+   git clone <YOUR_REPOSITORY_URL
    cd <YOUR_REPOSITORY_NAME>
    ```
 
