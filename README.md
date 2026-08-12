@@ -18,7 +18,7 @@ The framework is shown below.
 - Class-specific learnable text suffixes for stronger category representations.
 - Spatial Instance Learning (SIL) for suppressing confusing nearby proposals.
 - Training and evaluation configurations for RSVG, DIOR-RSVG, and OPT-RSVG.
-- Data conversion, evaluation, visualization, and experiment scripts.
+- Dataset conversion and training/testing scripts.
 
 ## Datasets
 
