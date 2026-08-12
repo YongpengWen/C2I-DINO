@@ -12,7 +12,7 @@ def parse_args():
         'evaluation.')
     parser.add_argument(
         '--data-root',
-        default='/root/autodl-tmp/DIOR-RSVG',
+        default='datasets/DIOR-RSVG',
         help='DIOR-RSVG root containing Annotations, JPEGImages and split txt.')
     parser.add_argument(
         '--ann-dir',

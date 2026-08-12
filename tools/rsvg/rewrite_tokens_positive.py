@@ -35,7 +35,7 @@ def parse_args():
         'noun phrase spans.')
     parser.add_argument(
         '--data-root',
-        default='/root/autodl-tmp/datasets/RSVG/rsvg',
+        default='datasets/RSVG/rsvg',
         help='RSVG root that contains odvg_ann and mdetr_annotations.')
     parser.add_argument(
         '--out-suffix',

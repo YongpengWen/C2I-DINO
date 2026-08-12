@@ -13,7 +13,7 @@ def parse_args():
         description='Plot MMEngine scalar logs for DIOR-RSVG training.')
     parser.add_argument(
         '--work-dir',
-        default='/root/autodl-tmp/work_dirs/dior_rsvg_official_split_bs8_12e',
+        default='work_dirs/dior_rsvg',
         help='Training work directory.')
     parser.add_argument(
         '--scalars',
