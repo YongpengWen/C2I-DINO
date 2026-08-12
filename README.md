@@ -40,6 +40,14 @@ datasets/
     └── odvg_ann_official_split/
 ```
 
+RSVG can use the provided converted annotations directly. If its token spans need to be regenerated, run:
+
+```bash
+python tools/rsvg/rewrite_tokens_positive.py \
+  --data-root datasets/RSVG/rsvg \
+  --out-suffix _processed
+```
+
 For DIOR-RSVG and OPT-RSVG, regenerate converted annotations from the original XML and split files with:
 
 ```bash
@@ -47,10 +55,7 @@ For DIOR-RSVG and OPT-RSVG, regenerate converted annotations from the original X
 python tools/dior_rsvg/dior_rsvg_xml_to_grounding.py \
   --data-root datasets/DIOR-RSVG
 
-python tools/opt_rsvg/opt_rsvg_xml_to_mdetr.py \
-  --data-root datasets/opt-rsvg
-
-python tools/opt_rsvg/opt_rsvg_xml_to_odvg.py \
+python tools/opt_rsvg/convert_opt_rsvg.py \
   --data-root datasets/opt-rsvg
 ```
 
