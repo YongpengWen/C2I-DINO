@@ -18,10 +18,6 @@ The figure below summarizes C2I-DINO. Category-Focused Prompting (CFP) strengthe
 
 ![C2I-DINO framework](assets/framework.png)
 
-The reported results are shown below for OPT-RSVG and DIOR-RSVG.
-
-![C2I-DINO results](assets/results.png)
-
 ## Key Features
 
 - Grounding DINO with a Swin-T visual backbone.
