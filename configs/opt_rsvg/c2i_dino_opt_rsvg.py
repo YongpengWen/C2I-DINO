@@ -107,7 +107,7 @@ val_dataloader = dict(
 
 test_dataloader = dict(
     dataset=dict(
-        ann_file='mdetr_annotations_official_split_target_np/'
+        ann_file='mdetr_annotations_official_split/'
         'finetune_opt_rsvg_test.json',
         pipeline=test_pipeline))
 
