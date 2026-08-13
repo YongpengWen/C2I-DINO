@@ -62,23 +62,23 @@ python tools/opt_rsvg/convert_opt_rsvg.py \
 
 ## Installation
 
-1. Clone the repository.
+Clone the repository:
 
-   ```bash
-   git clone https://github.com/YongpengWen/C2I-DINO.git
-   cd C2I-DINO
-   ```
+```bash
+git clone https://github.com/YongpengWen/C2I-DINO.git
+cd C2I-DINO
+```
 
-2. Create the environment. The experiments were run with Python 3.8, PyTorch 2.0.1, CUDA 11.7, MMCV 2.0.0, MMEngine 0.10.4, MMDetection 3.3.0, and Transformers 4.46.3.
+Install the pinned runtime and the local package before training:
 
-   ```bash
-   conda create -n mmdet python=3.8 -y
-   conda activate mmdet
+```bash
+conda create -n c2i-dino python=3.8 -y
+conda activate c2i-dino
+pip install -r requirements/runtime.txt
+pip install -v -e .
+```
 
-   # Install a PyTorch and torchvision build compatible with your CUDA version.
-   pip install -r requirements/runtime.txt
-   pip install -v -e .
-   ```
+Before a full run, verify that each configuration can be imported and that one training iteration completes with the prepared data.
 
 ## Download Pretrained Models
 
