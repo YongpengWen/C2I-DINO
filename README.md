@@ -41,7 +41,7 @@ datasets/
     └── split/
 ```
 
-The conversion scripts generate the project-specific ODVG and MDETR annotation directories required by training and evaluation. RSVG can use its provided annotations directly; to regenerate its token spans, run:
+Run the following commands after preparing the datasets. RSVG can use its provided annotations directly; to regenerate its annotation spans, run:
 
 ```bash
 python tools/rsvg/rewrite_tokens_positive.py \
