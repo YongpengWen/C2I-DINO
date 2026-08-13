@@ -14,7 +14,13 @@ The framework is shown below.
 
 ## Datasets
 
-Use the three paper datasets: RSVG, DIOR-RSVG, and OPT-RSVG. Download them from their official sources and place the required files under:
+| Dataset | Download | Local path |
+| --- | --- | --- |
+| RSVG | [Official website](https://sunyuxi.github.io/publication/GeoVG) | `datasets/RSVG/rsvg/` |
+| DIOR-RSVG | [Google Drive](https://drive.google.com/drive/folders/1hTqtYsC6B-m4ED2ewx5oKuYZV13EoJp_) | `datasets/DIOR-RSVG/` |
+| OPT-RSVG | [Official repository](https://github.com/like413/OPT-RSVG) | `datasets/opt-rsvg/` |
+
+Organize the downloaded datasets as follows:
 
 ```text
 datasets/
