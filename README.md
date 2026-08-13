@@ -78,8 +78,6 @@ pip install -r requirements/runtime.txt
 pip install -v -e .
 ```
 
-Before a full run, verify that each configuration can be imported and that one training iteration completes with the prepared data.
-
 ## Download Pretrained Models
 
 The experiments use a Grounding DINO Swin-T checkpoint and the `bert-base-uncased` tokenizer/model. Download the bundled files from Baidu Netdisk:
