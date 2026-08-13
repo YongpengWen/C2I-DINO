@@ -12,14 +12,6 @@ The framework is shown below.
 
 ![C2I-DINO framework](assets/framework.png)
 
-## Key Features
-
-- Grounding DINO with a Swin-T visual backbone.
-- Class-specific learnable text suffixes for stronger category representations.
-- Spatial Instance Learning (SIL) for suppressing confusing nearby proposals.
-- Training and evaluation configurations for RSVG, DIOR-RSVG, and OPT-RSVG.
-- Dataset conversion and training/testing scripts.
-
 ## Datasets
 
 Use the three paper datasets: RSVG, DIOR-RSVG, and OPT-RSVG. Download them from their official sources and place the required files under:
