@@ -22,25 +22,26 @@ Experiments use three remote sensing visual grounding benchmarks. Download each 
 | DIOR-RSVG | [Google Drive](https://drive.google.com/drive/folders/1hTqtYsC6B-m4ED2ewx5oKuYZV13EoJp_) | `datasets/DIOR-RSVG/` |
 | OPT-RSVG | [Official repository](https://github.com/like413/OPT-RSVG) | `datasets/opt-rsvg/` |
 
-Organize the downloaded datasets as follows:
+After downloading, keep the original dataset files in the following layout:
 
 ```text
 datasets/
 ├── RSVG/rsvg/
 │   ├── images/
-│   ├── mdetr_annotations/
-│   └── odvg_ann/
+│   └── annotation files/
 ├── DIOR-RSVG/
 │   ├── JPEGImages/
-│   ├── mdetr_annotations_official_split/
-│   └── odvg_ann_official_split/
+│   ├── Annotations/
+│   ├── train.txt
+│   ├── val.txt
+│   └── test.txt
 └── opt-rsvg/
     ├── Image/
-    ├── mdetr_annotations_official_split/
-    └── odvg_ann_official_split/
+    ├── Annotations/
+    └── split/
 ```
 
-RSVG can use the provided converted annotations directly. If its token spans need to be regenerated, run:
+The conversion scripts generate the project-specific ODVG and MDETR annotation directories required by training and evaluation. RSVG can use its provided annotations directly; to regenerate its token spans, run:
 
 ```bash
 python tools/rsvg/rewrite_tokens_positive.py \
