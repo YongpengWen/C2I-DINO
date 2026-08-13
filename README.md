@@ -14,6 +14,8 @@ The framework is shown below.
 
 ## Datasets
 
+Experiments use three remote sensing visual grounding benchmarks. Download each dataset from its official source and place it at the repository-relative path shown below.
+
 | Dataset | Download | Local path |
 | --- | --- | --- |
 | RSVG | [Official website](https://sunyuxi.github.io/publication/GeoVG) | `datasets/RSVG/rsvg/` |
