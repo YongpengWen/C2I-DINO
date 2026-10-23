@@ -125,6 +125,16 @@ python tools/train.py \
   configs/opt_rsvg/c2i_dino_opt_rsvg.py \
   --work-dir work_dirs/opt_rsvg
 ```
+
+
+## Evaluation
+
+```bash
+python tools/test.py <CONFIG_FILE> <CHECKPOINT_FILE> --work-dir <OUTPUT_DIRECTORY>
+```
+
+Replace the placeholders with the relevant configuration, trained checkpoint, and output directory.
+
 ## Citation
 
 If you find C2I-DINO useful in your research, please consider citing our paper:
@@ -142,14 +152,6 @@ If you find C2I-DINO useful in your research, please consider citing our paper:
   doi={10.1109/LGRS.2026.3745178}
 }
 ```
-
-## Evaluation
-
-```bash
-python tools/test.py <CONFIG_FILE> <CHECKPOINT_FILE> --work-dir <OUTPUT_DIRECTORY>
-```
-
-Replace the placeholders with the relevant configuration, trained checkpoint, and output directory.
 
 ## Acknowledgments
 
