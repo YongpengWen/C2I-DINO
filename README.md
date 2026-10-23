@@ -125,6 +125,23 @@ python tools/train.py \
   configs/opt_rsvg/c2i_dino_opt_rsvg.py \
   --work-dir work_dirs/opt_rsvg
 ```
+## Citation
+
+If you find C2I-DINO useful in your research, please consider citing our paper:
+
+```bibtex
+@ARTICLE{11743839,
+  author={Cai, Linghong and Wen, Yongpeng and Song, Yanghui and Sun, Wanghao and Zhang, Yaming and Liu, Nanqing},
+  journal={IEEE Geoscience and Remote Sensing Letters},
+  title={C2I-DINO: Category-to-Instance Discrimination for Remote Sensing Visual Grounding},
+  year={2026},
+  volume={},
+  number={},
+  pages={1-1},
+  keywords={Grounding;Visualization;Bit error rate;Remote sensing;Testing;Vectors;Training;Learning (artificial intelligence);Ranking (statistics);Conferences;Remote sensing visual grounding;Grounding DINO;prompt learning},
+  doi={10.1109/LGRS.2026.3745178}
+}
+```
 
 ## Evaluation
 
